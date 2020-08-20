@@ -1,0 +1,22 @@
+{
+  "HOST": "http://localhost:3002",
+  "server": {
+    "port": "8081"
+  },
+  "db": {
+    "port": "5432",
+    "host": "localhost",
+    "name": "test2",
+    "dbUser": "postgres",
+    "password": "postgres"
+  },
+  "SENDGRID_USERNAME": "",
+  "SENDGRID_SENDER": "",
+  "SENDGRID_ADMIN_RECEIVER": "",
+  "SENDGRID_API_KEY": "",
+  "jwtConfigs": {
+    "jwtSecret": "U2FsdGVkX1Zx0aUWww2qoi2DmCohg9O",
+    "jwtExpires": "2m",
+    "refreshExpires": "2m"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "HOST": "HOST",
+  "server": {
+    "port": "SERVER_PORT"
+  },
+  "db": {
+    "port": "DB_PORT",
+    "host": "DB_HOST",
+    "name": "DB_NAME",
+    "dbUser": "DB_USER",
+    "password": "DB_PASSWORD"
+  },
+  "SENDGRID_USERNAME": "SENDGRID_USERNAME",
+  "SENDGRID_SENDER": "SENDGRID_SENDER",
+  "SENDGRID_ADMIN_RECEIVER": "SENDGRID_ADMIN_RECEIVER",
+  "SENDGRID_API_KEY": "SENDGRID_API_KEY",
+  "jwtConfigs": {
+    "jwtSecret": "ENVTEST",
+    "jwtExpires": "JWT_EXPIRES",
+    "refreshExpires": "JWT_REFRESH_EXPIRES"
+  }
+}
