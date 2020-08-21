@@ -10,8 +10,8 @@ export default (app: Express): void => {
 
   // DDOS attack
   var ddos = new Ddos({
-    burst: 5,
-    limit: 3,
-  }); // 5 request in 1 sec 3 time
+    burst: 100,
+    limit: 100,
+  }); // 100 request in 1 sec 100 time
   app.use(ddos.express);
 };
