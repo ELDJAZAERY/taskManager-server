@@ -40,7 +40,7 @@ export default class UserService {
   static getAllTasks = async (user: IUser): Promise<Task[]> => {
     if (user.role === UserRolesEnum.ADMIN) {
       const tasks: Task[] = await Task.find({
-        order: { createdAt: "ASC" },
+        order: { deadline: "ASC" },
       });
 
       return tasks;
@@ -48,7 +48,7 @@ export default class UserService {
 
     const tasks: Task[] = await Task.find({
       where: { profile: In([user.role, "ALL"]) },
-      order: { createdAt: "ASC" },
+      order: { deadline: "ASC" },
     });
 
     return tasks;

@@ -64,7 +64,7 @@ class UserController implements Controller {
     const task = await TaskService.createTask(
       taskDTO
     );
-    res.status(HttpStatusCode.CREATED).send(task.normalize());
+    res.sendStatus(HttpStatusCode.CREATED);
   }
 
   async updateTask(req: Request, res: Response): Promise<void> {
@@ -101,9 +101,7 @@ class UserController implements Controller {
       iUser
     );
 
-    res.status(HttpStatusCode.SUCCESS).send({
-      tasks
-    });
+    res.status(HttpStatusCode.SUCCESS).send(tasks);
   }
 
   async getTask(req: Request, res: Response): Promise<void> {

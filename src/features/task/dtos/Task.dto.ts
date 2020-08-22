@@ -2,7 +2,8 @@ import {
   IsString,
   IsNotEmpty,
   IsEnum,
-  IsDateString
+  IsDateString,
+  IsOptional
 } from 'class-validator';
 
 import { TaskCategories, TaskPriorities } from '../enums';
@@ -12,9 +13,9 @@ export default class TaskDTO {
   @IsString()
   title: string;
 
-  @IsNotEmpty()
+  @IsOptional()
   @IsString()
-  description: string;
+  description?: string;
 
   @IsEnum(TaskCategories)
   category: TaskCategories;

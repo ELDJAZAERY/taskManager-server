@@ -53,7 +53,7 @@ export default class Task extends BaseEntity {
     const { title, description, category, priority, deadline } = taskDTO;
 
     this.title = title;
-    this.description = description;
+    this.description = description || "";
     this.category = category;
     this.priority = priority;
     this.deadline = new Date(deadline);
@@ -75,11 +75,10 @@ export default class Task extends BaseEntity {
     const { title, description, category, priority, deadline } = taskDTO;
 
     this.title = title;
-    this.description = description;
+    this.description = description || "";
     this.category = category;
     this.priority = priority;
     this.deadline = new Date(deadline);
-    this.status = TaskStatuses.In_Backlog;
     this.profile = getProfile(this.category);
 
     return this.save();
