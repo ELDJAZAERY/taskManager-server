@@ -5,7 +5,8 @@ import HttpException from '../../exceptions/httpException';
 import { HttpStatusCode } from '../../shared';
 import loginResponse from './interfaces/login.response';
 import RefreshTokenDTO from './dtos/refreshToken.dto';
-import { IUser, User } from '../user';
+import { IUser } from '../user';
+import User from '../user/models/user.model'
 import { normalizeId } from '../user/helpers/user.manager';
 
 export default class AuthService {

@@ -5,7 +5,8 @@ import validationMiddleware from "../../middlewares/dataValidator";
 import LoginDTO from "./dtos/login.dto";
 import loginResponse from "./interfaces/login.response";
 import RefreshTokenDTO from "./dtos/refreshToken.dto";
-import { CreateUserDTO, User } from "../user";
+import { CreateUserDTO } from "../user";
+import User from '../user/models/user.model'
 import UserService from "../user/user.service";
 import ConfirmMailDTO from "./dtos/confirm.mail";
 

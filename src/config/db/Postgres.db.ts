@@ -1,7 +1,9 @@
-import 'reflect-metadata';
-import { createConnection } from 'typeorm';
-import { DBConfig } from '../../shared/interfaces/config.interface';
-import DataBaseInterface from './db.interface';
+import "reflect-metadata";
+import { createConnection } from "typeorm";
+import { DBConfig } from "../../shared/interfaces/config.interface";
+import DataBaseInterface from "./db.interface";
+
+import { User, Task } from "../../features/models";
 
 export default class PostgresDataBase implements DataBaseInterface {
   private host: string;
@@ -21,16 +23,16 @@ export default class PostgresDataBase implements DataBaseInterface {
   async connectDB(): Promise<boolean> {
     try {
       await createConnection({
-        type: 'postgres',
+        type: "postgres",
         host: this.host,
         port: this.port,
         username: this.dbUser,
         password: this.password,
         database: this.name,
-        entities: [`${__dirname}/../../**/**/*.model{.ts,.js }`],
+        entities: [`${__dirname}/../../**/**/*.model{.ts,.js }`, User, Task],
         synchronize: true,
         logging: false,
-        ssl: true
+        ssl: true,
       });
       this.success();
       return true;

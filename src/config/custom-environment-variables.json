@@ -15,7 +15,7 @@
   "SENDGRID_ADMIN_RECEIVER": "SENDGRID_ADMIN_RECEIVER",
   "SENDGRID_API_KEY": "SENDGRID_API_KEY",
   "jwtConfigs": {
-    "jwtSecret": "ENVTEST",
+    "jwtSecret": "JWT_SECRET",
     "jwtExpires": "JWT_EXPIRES",
     "refreshExpires": "JWT_REFRESH_EXPIRES"
   }

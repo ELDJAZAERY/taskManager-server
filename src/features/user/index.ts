@@ -25,7 +25,6 @@
 
 export { default as BasicUserEntity } from './models/basic.user.model';
 export { default as UserController } from './user.controller';
-export { default as User } from './models/user.model';
 export { default as IUser } from './interfaces/Iuser.interface';
 export { default as AuthUser } from './interfaces/auth.user.interface';
 export { default as UpdateUserDTO } from './dtos/update.user.dto';
