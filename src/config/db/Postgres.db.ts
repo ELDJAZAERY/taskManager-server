@@ -29,7 +29,8 @@ export default class PostgresDataBase implements DataBaseInterface {
         database: this.name,
         entities: [`${__dirname}/../../**/**/*.model{.ts,.js }`],
         synchronize: true,
-        logging: false
+        logging: false,
+        ssl: true
       });
       this.success();
       return true;

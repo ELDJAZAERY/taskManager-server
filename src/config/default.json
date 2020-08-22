@@ -10,10 +10,10 @@
     "dbUser": "postgres",
     "password": "postgres"
   },
-  "SENDGRID_USERNAME": "ELDJAZAERY",
-  "SENDGRID_SENDER": "eldjazaeryibrahim@gmail.com",
+  "SENDGRID_USERNAME": "",
+  "SENDGRID_SENDER": "",
   "SENDGRID_ADMIN_RECEIVER": "",
-  "SENDGRID_API_KEY": "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",
+  "SENDGRID_API_KEY": "",
   "jwtConfigs": {
     "jwtSecret": "U2FsdGVkX1Zx0aUWww2qoi2DmCohg9O",
     "jwtExpires": "60m",
