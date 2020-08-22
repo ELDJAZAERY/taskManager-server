@@ -11,6 +11,7 @@ import ConfirmMailDTO from "./dtos/confirm.mail";
 
 import ResendCMail from "./dtos/resend.c.mail";
 import ResetPasswordWithCodeDTO from "./dtos/forgot.password.dto";
+import UserRolesEnum from "../user/enums/roles.Enum";
 
 export default class AuthController implements Controller {
   path = "/auth";
@@ -80,6 +81,9 @@ export default class AuthController implements Controller {
 
   async register(req: Request, res: Response): Promise<void> {
     const createUserDTO: CreateUserDTO = req.body;
+    if(createUserDTO.role === UserRolesEnum.ADMIN){
+      res.sendStatus(HttpStatusCode.BAD_REQUEST)
+    }
     const user: User = await UserService.createUser(createUserDTO);
     res.status(HttpStatusCode.CREATED).send(user.normalize());
   }

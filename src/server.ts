@@ -2,6 +2,7 @@ import config from 'config';
 import App from './app';
 import DataBase from './config/db';
 import DBsEnum from './config/db/dbs.enums';
+import { seed } from './SEED/init';
 
 const startServer = async () => {
   const serverConfig: any = config.get('server');
@@ -12,6 +13,10 @@ const startServer = async () => {
   if (connected) {
     const app = new App(serverConfig.port);
     app.listen();
+
+    // seed Data
+    seed()
+
   } else {
     console.error(
       new Error(

@@ -75,7 +75,7 @@ export const sendOodCode = async (identificator: string): Promise<boolean> => {
     return Promise.reject(
       new HttpException(
         HttpStatusCode.FORBIDDEN,
-        `Your account is not yet active`
+        `Your account is not active`
       )
     );
   }

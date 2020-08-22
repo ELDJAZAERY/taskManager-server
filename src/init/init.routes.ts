@@ -3,6 +3,7 @@ import { Controller } from "../shared";
 import { AuthController } from "../features/auth";
 import authMiddleware from "../middlewares/auth";
 import { UserController } from "../features/user";
+import TaskController from "../features/task/task.controller"
 
 const URL_PREFIX = "/api";
 
@@ -10,6 +11,7 @@ export default (app: Express): void => {
   const controllers: Controller[] = [
     new AuthController(),
     new UserController(),
+    new TaskController()
   ];
 
   controllers.forEach((controller) => {

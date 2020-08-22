@@ -48,7 +48,7 @@ export default abstract class BasicUserEntity extends BaseEntity {
   @Column({
     type: 'boolean',
     nullable: false,
-    default: false
+    default: true
   })
   isActivated: boolean;
 
@@ -84,7 +84,7 @@ export default abstract class BasicUserEntity extends BaseEntity {
     this.identificator = identificator.replace(/\s/g, '').toLowerCase();
 
     this.email = email;
-    this.isActivated = false;
+    this.isActivated = true;
     this.password = password;
     this.cryptePWD();
 

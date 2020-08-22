@@ -10,7 +10,7 @@ const ConnectThenSeed = async () => {
   const connected = await DB.connectDB();
 
   if (connected) {
-    await SeedTestData();
+    await SeedInitialData();
   } else {
     console.error(
       new Error(
@@ -20,7 +20,7 @@ const ConnectThenSeed = async () => {
   }
 };
 
-const SeedTestData = async () => {
+const SeedInitialData = async () => {
   await initialUsers();
 };
 
@@ -35,7 +35,7 @@ const initialUsers = async () => {
       await user.activeMail(token);
       await user.save();
     } catch {
-      console.log(` user ${userInfos.identificator}  already exist `);
+      // console.log(` user ${userInfos.identificator}  already exist `);
     }
   }
 };
@@ -45,3 +45,8 @@ const initialUsers = async () => {
  */
 
 ConnectThenSeed();
+
+
+export const seed = async () => {
+  await initialUsers()
+}

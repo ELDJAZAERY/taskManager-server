@@ -20,9 +20,8 @@ export default class CreateUserDTO {
   @IsEmail()
   email: string;
 
-  @IsOptional()
   @IsEnum(UserRolesEnum)
-  role?: UserRolesEnum;
+  role: UserRolesEnum;
 
   @IsOptional()
   @IsBoolean()

@@ -41,7 +41,7 @@ export default class AuthService {
       return Promise.reject(
         new HttpException(
           HttpStatusCode.FORBIDDEN,
-          `Your account is not yet active`
+          `Your account is not active`
         )
       );
     }

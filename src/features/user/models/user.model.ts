@@ -19,7 +19,7 @@ export default class User extends BasicUserEntity {
 
   preSave = (createUser: CreateUserDTO): any => {
     this.preSaveUser(createUser);
-    this.role = createUser.role || UserRolesEnum.DEVELOPER;
+    this.role = createUser.role;
   };
 
   updateBasicInfos = (updateUserDTO: UpdateUserDTO): Promise<User> => {
