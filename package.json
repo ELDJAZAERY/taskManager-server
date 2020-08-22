@@ -42,7 +42,8 @@
     "typescript": "^3.5.3"
   },
   "scripts": {
-    "start": "nodemon",
+    "dev": "nodemon",
+    "start": "node dist/server.js",
     "start:prod": "node dist/server.js",
     "build": "tsc",
     "seed": "export NODE_CONFIG_DIR=./src/config && ts-node src/SEED/init.ts"
