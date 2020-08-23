@@ -1,19 +1,6 @@
-## ATGIS Backend Node Server
+## Candidate - EL DJAZAERY 
+## KPMG - task manager
 
-Nodejs with typeScript Boilerplate
-
-## ATGIS Documentation
-
-Documentation contains all ATGIS API ENDPOINTS.
-
-     - BASE URL : host/api
-       - /ATGIS
-            - /code
-            - /geocode
-            - /elevate
-            - /autocode
-
-[LINK TO DOC](https://**.com) # SOON
 
 ## Dependencies
 
@@ -22,9 +9,9 @@ Documentation contains all ATGIS API ENDPOINTS.
 - Express ^4.\*
 - Express-async-errors
 - TypeORM
-- PostgreSQL 11.X || mongoose : ^5.\*
+- PostgreSQL 11.X
 - Axios
-- Jsonwebtoken
+- JsonWebToken
 - Crypto
 - Jest
 
@@ -67,16 +54,10 @@ yarn test
         - Docker
         - Docker-compose
 
-    # Guide
+    # Script
       - git clone {{ Repo }}
       - npm install
       - npm run-script docker
-
-      // Backend API will listening on Port 4000
-        - change port in docker-compose.yml from 4000 to whatever else
-
-      // Postgres will listening on Port 11543
-        - connect with user postgres pwd postgres db test
 
 ## SEED DATA
 
@@ -85,7 +66,7 @@ yarn test
 # WITHIN DOCKER
 
      - after build the docker
-        - docker exec -it backend_server_1 yarn seed
+        - docker exec -it img-name yarn seed
 
 # WITHOUT DOCKER
 

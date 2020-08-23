@@ -55,7 +55,7 @@ export const sendConfirmMail = async (
     token
   );
 
-  return sendMail(user.email, bodyMail, 'Confirmation link');
+  return sendMail(user.email, bodyMail, 'confirmation du compte');
 };
 
 export const sendOodCode = async (identificator: string): Promise<boolean> => {
@@ -86,7 +86,7 @@ export const sendOodCode = async (identificator: string): Promise<boolean> => {
 
   const bodyMail: string = resetPasswordMail(user.identificator, oodCode, HOST);
 
-  return sendMail(user.email, bodyMail, 'Reset Password Request');
+  return sendMail(user.email, bodyMail, 'Réinitialiser le mot de passe');
 };
 
 export const getIUser = async (

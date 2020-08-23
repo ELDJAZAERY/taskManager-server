@@ -7,6 +7,7 @@ import { IUser } from "../user";
 
 import UpdateStatusDTO from "./dtos/update.status.dto";
 import UserRolesEnum from "../user/enums/roles.Enum";
+import { sendTaskNotification } from "./helpers";
 
 export default class UserService {
   static createTask = (taskDTO: TaskDTO): Promise<Task> => {
@@ -67,7 +68,8 @@ export default class UserService {
 
   static updateStatus = async (
     id: string,
-    updateStatusDTO: UpdateStatusDTO
+    updateStatusDTO: UpdateStatusDTO,
+    iUser: IUser,
   ): Promise<Task> => {
     const task: Task | undefined = await Task.findOne(id);
 
@@ -76,6 +78,11 @@ export default class UserService {
         new HttpException(HttpStatusCode.BAD_REQUEST, "Task not found")
       );
 
-    return task.updateStatus(updateStatusDTO.status);
+    const updatedTask = await task.updateStatus(updateStatusDTO.status);
+
+    // notify admin
+    sendTaskNotification(updatedTask, iUser)
+
+    return updatedTask
   };
 }

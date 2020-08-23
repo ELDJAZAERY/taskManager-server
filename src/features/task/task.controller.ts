@@ -79,10 +79,12 @@ class UserController implements Controller {
 
   async updateStatus(req: Request, res: Response): Promise<void> {
     const { id } = req.params;
+    const iUser: IUser = (req as any).iUser;
     const updateStatusDTO: UpdateStatusDTO = req.body;
     const task = await TaskService.updateStatus(
       id,
-      updateStatusDTO
+      updateStatusDTO,
+      iUser
     );
     res.status(HttpStatusCode.SUCCESS).send(task.normalize());
   }

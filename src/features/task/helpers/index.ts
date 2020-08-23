@@ -1,6 +1,14 @@
 import { TaskCategories } from "../enums";
 import UserRolesEnum from "../../user/enums/roles.Enum";
 
+import Task from "../../task/models/task.model";
+import { IUser } from "../../user";
+
+import {
+  sendNotification,
+  taskNotification,
+} from "../../../shared/mailing/index";
+
 export const getProfile = (category: TaskCategories): UserRolesEnum | "ALL" => {
   switch (category) {
     case TaskCategories.Audit:
@@ -30,4 +38,8 @@ export const getProfile = (category: TaskCategories): UserRolesEnum | "ALL" => {
     default:
       return "ALL";
   }
+};
+
+export const sendTaskNotification = (task: Task, iUser: IUser) : Promise<boolean> => {
+  return sendNotification(taskNotification(task, iUser));
 };
